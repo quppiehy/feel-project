@@ -1,9 +1,9 @@
 "use client";
-
-import FeelLogo from "../app/img/FeelLogo.png";
 import Image from "next/image";
+import FeelLogo from "../img/FeelLogo.png";
 import { signIn, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+
 import { useEffect, useState } from "react";
 
 const Login: React.FC = () => {
@@ -33,11 +33,7 @@ const Login: React.FC = () => {
         <div className="w-full bg-white rounded-lg shadow-lg md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 pt-3 space-y-4 md:space-y-6">
             <div className="flex justify-center space-x-4 ">
-              <button
-                type="button"
-                onClick={() => signIn("github", { callbackUrl: "/profile" })}
-                className="flex items-center justify-center px-4 py-1 bg-white text-black text-sm border border-black rounded-lg hover:bg-purple-500 hover:text-white hover:border-white focus:ring-4 focus:ring-purple-300 min-w-[250px]"
-              >
+              <button className="flex items-center justify-center px-4 py-1 bg-white text-black text-sm border border-black rounded-lg hover:bg-purple-500 hover:text-white hover:border-white focus:ring-4 focus:ring-purple-300 min-w-[250px]">
                 <Image
                   src="https://www.svgrepo.com/show/355037/google.svg"
                   width={22}
@@ -48,7 +44,7 @@ const Login: React.FC = () => {
                 Sign in with Google
               </button>
               <button
-                type="button"
+                type="submit"
                 onClick={() => signIn("github", { callbackUrl: "/profile" })}
                 className="flex items-center justify-center px-4 py-1 bg-white text-black text-sm border border-black rounded-lg hover:bg-purple-500 hover:text-white hover:border-white focus:ring-4 focus:ring-purple-300  min-w-[250px]"
               >
